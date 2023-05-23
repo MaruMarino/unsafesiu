@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import CardList from "./components/Classes/CardList";
+import Form from "./components/Classes/Form";
 
 function App() {
+  const testData = [
+    {
+      name: "Dan Abramov",
+      avatar_url: "https://avatars0.githubusercontent.com/u/810438?v=4",
+      company: "@facebook",
+    },
+    {
+      name: "Sophie Alpert",
+      avatar_url: "https://avatars2.githubusercontent.com/u/6820?v=4",
+      company: "Humu",
+    },
+    {
+      name: "Sebastian Markbåge",
+      avatar_url: "https://avatars2.githubusercontent.com/u/63648?v=4",
+      company: "Facebook",
+    },
+  ];
+
+  const [githubData, setGithubdata] = useState(testData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form updateProfilesList={setGithubdata} listOfProfiles={testData} />
+      <div className="header">The GitHub Cards App</div>
+      <CardList profiles={githubData} />
     </div>
   );
 }
