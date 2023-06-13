@@ -1,0 +1,52 @@
+/*=== MEDIA QUERY ===*/
+/*
+* ----------------------------------------------------------------------------------------
+Author       : Themefisher
+Template Name: Promodise
+Version      : 1.0
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 01.GLOBAL CSS STYLE
+* 02.PRELOADER & BOUNCE CCS STYLE
+* 03.HOMEPAGE CSS STYLE
+    -LOGO CSS
+    -MENU CSS
+* 04.ABOUT CSS STYLE
+* 05.SERVICE CSS STYLE
+* 06.WORK CSS STYLE
+* 07.AVAILABLE CSS STYLE
+* 08.CONTACT CSS STYLE
+* 09.FOOTER CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 01.GLOBAL STYLE
+* ----------------------------------------------------------------------------------------
+*/
+* {
+  box-sizing: border-box;
+}
+
+.Portada {
+  background-image: url('../images/portada.png');
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+
+}
+.column {
+  float: left;
+  width: 50%;
+  color: aliceblue;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
