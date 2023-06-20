@@ -8,7 +8,7 @@ import IconButton from "../components/IconButton";
 import LoginModal from "../components/LoginModal";
 
 
-const Home = () => {
+const UserHomePage = () => {
 
   const [loginModal, setLoginModal] = useState(false);
   const enableLogin = () => {
@@ -52,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UserHomePage;

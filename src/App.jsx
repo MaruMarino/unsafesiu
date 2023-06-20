@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 import Home from './Pages/Home';
+import UserHomePage from './Pages/UserHomePage';
+import NoMatch from './Pages/NotFound';
 import './css/style.css';
 
 const App = () => {
@@ -11,6 +13,8 @@ const App = () => {
     <Routes> 
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="MiHome" element={<UserHomePage />} />
+        <Route path="404" element={<NoMatch />} />
         
          {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

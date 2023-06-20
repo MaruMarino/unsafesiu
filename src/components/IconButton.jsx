@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap";
 
-function CounterButton(props) {
+function IconButton(props) {
   return (
-  <Button className={props.classes}>
+  <Button className={props.classes} onClick={props.onClickAction}>
     {props.text}
     <div className="icon">
       <img
@@ -17,4 +17,4 @@ function CounterButton(props) {
   )
 }
 
-export default CounterButton;
+export default IconButton;
