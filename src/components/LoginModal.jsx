@@ -3,7 +3,7 @@ import { logInUser } from "../api/user";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-function LoginModal(props) {
+const LoginModal = (props) => {
   let navigate = useNavigate(); 
   const login = async (event) => {
     event.preventDefault();

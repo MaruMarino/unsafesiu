@@ -1,12 +1,15 @@
 import React from "react";
+
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Materias = () => {
   return (
-    <>
-      <Header/>
-      <h1>MATERIAS</h1>
-    </>
+    <div>
+      <Header />
+        <h1>Materias</h1>
+      <Footer />
+    </div>
   );
 };
 
