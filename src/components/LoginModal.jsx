@@ -13,6 +13,7 @@ function LoginModal(props) {
     console.log(response);
     if(response!=null){
       localStorage.setItem('jwt', response.token);
+      localStorage.setItem('rol', response.rol);
       //window.location.replace("/MiHome")
       if(response.rol === "ROLE_ALUMNO"){
         navigate("/Materias");
