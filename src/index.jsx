@@ -11,6 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+document.body.style.backgroundColor = "wheat"
 root.render(
   <React.StrictMode>
     <BrowserRouter>

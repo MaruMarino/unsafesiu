@@ -1,11 +1,13 @@
 import React from "react";
+import Header from "../components/Header";
 
 
 const Profesores = () => {
   return (
-    <div>
+    <>
+      <Header/>
       <h1>Profesores</h1>
-    </div>
+    </>
   );
 };
 
