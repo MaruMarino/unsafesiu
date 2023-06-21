@@ -1,10 +1,14 @@
 import React from "react";
 
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Materias = () => {
   return (
     <div>
-      <h1>MATERIAS</h1>
+      <Header />
+        <h1>Materias</h1>
+      <Footer />
     </div>
   );
 };
