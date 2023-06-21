@@ -1,14 +1,28 @@
 import { Button, Form, Modal } from "react-bootstrap";
-import React, { useState } from "react";
+import { logInUser } from "../api/user";
+import { useNavigate } from "react-router-dom";
+import React from "react";
 
 function LoginModal(props) {
-  const login = (event) => {
+  let navigate = useNavigate(); 
+  const login = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target),
-      formDataObj = Object.fromEntries(formData.entries());
-    console.log("Form data:");
-    console.log(formDataObj);
-    //window.location.replace("/MiHome")
+    formDataObj = Object.fromEntries(formData.entries());
+    const response = await logInUser(formDataObj)
+    console.log(response);
+    if(response!=null){
+      localStorage.setItem('jwt', response.token);
+      //window.location.replace("/MiHome")
+      if(response.rol === "ROLE_ALUMNO"){
+        navigate("/Materias");
+      } else if (response.rol === "ROLE_PROFESOR"){
+        navigate("/Cursos");
+      } else if (response.rol === "ROLE_RECTOR"){
+        navigate("/Profesores");
+      }
+      
+    }
   };
 
   const closeLogIn = () => {
