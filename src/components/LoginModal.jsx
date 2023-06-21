@@ -23,6 +23,17 @@ const LoginModal = (props) => {
         navigate("/Profesores");
       }
       
+    //TODO: ESTE ELSE ES SOLO PARA PROBAR SIN EL BACKEND
+    } else {
+      localStorage.setItem('rol', "ROLE_PROFESOR");
+
+      if(localStorage.getItem("rol") === "ROLE_ALUMNO"){
+        navigate("/Materias");
+      } else if (localStorage.getItem("rol") === "ROLE_PROFESOR"){
+        navigate("/Cursos");
+      } else if (localStorage.getItem("rol") === "ROLE_RECTOR"){
+        navigate("/Profesores");
+      }
     }
   };
 
