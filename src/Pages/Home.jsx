@@ -8,7 +8,7 @@ import IconButton from "../components/IconButton";
 import LoginModal from "../components/LoginModal";
 
 
-const Home = () => {
+const Home = (props) => {
 
   const [loginModal, setLoginModal] = useState(false);
   const enableLogin = () => {
@@ -46,7 +46,7 @@ const Home = () => {
           </Container>
         </div>
       </div>
-      <LoginModal showLogin={loginModal} setLogin={setLoginModal} />
+      <LoginModal showLogin={loginModal} setLogin={setLoginModal} setUserRole={props.setUserRole}/>
 
     </>
   );

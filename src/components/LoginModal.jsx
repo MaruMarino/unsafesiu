@@ -4,26 +4,39 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const LoginModal = (props) => {
-  let navigate = useNavigate(); 
+  let navigate = useNavigate();
   const login = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target),
     formDataObj = Object.fromEntries(formData.entries());
     const response = await logInUser(formDataObj);
     console.log(response);
-    if(response!=null){
-      localStorage.setItem('jwt', response.token);
-      localStorage.setItem('rol', response.rol);
+    if (response != null) {
+      localStorage.setItem("jwt", response.token);
+      localStorage.setItem("rol", response.rol);
+      props.setUserRole(localStorage.getItem("rol"));
       //window.location.replace("/MiHome")
-      if(response.rol === "ROLE_ALUMNO"){
+      if (response.rol === "ROLE_ALUMNO") {
         navigate("/Materias");
-      } else if (response.rol === "ROLE_PROFESOR"){
+      } else if (response.rol === "ROLE_PROFESOR") {
         navigate("/Cursos");
-      } else if (response.rol === "ROLE_RECTOR"){
+      } else if (response.rol === "ROLE_RECTOR") {
         navigate("/Profesores");
       }
-      
-    }
+
+      //TODO: ESTE ELSE ES SOLO PARA PROBAR SIN EL BACKEND
+    }/* else {
+      localStorage.setItem("rol", "ROLE_ALUMNO");
+      props.setUserRole(localStorage.getItem("rol"));
+
+      if (localStorage.getItem("rol") === "ROLE_ALUMNO") {
+        navigate("/Materias");
+      } else if (localStorage.getItem("rol") === "ROLE_PROFESOR") {
+        navigate("/Cursos");
+      } else if (localStorage.getItem("rol") === "ROLE_RECTOR") {
+        navigate("/Profesores");
+      }
+    }*/
   };
 
   const closeLogIn = () => {
@@ -44,6 +57,7 @@ const LoginModal = (props) => {
               type="user"
               placeholder="usuario1234"
               name="username"
+              required
             />
           </Form.Group>
 
@@ -53,6 +67,7 @@ const LoginModal = (props) => {
               type="password"
               placeholder="1234contr"
               name="password"
+              required
             />
           </Form.Group>
         </Form>
@@ -67,6 +82,6 @@ const LoginModal = (props) => {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default LoginModal;
