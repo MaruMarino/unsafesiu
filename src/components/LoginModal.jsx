@@ -8,7 +8,7 @@ const LoginModal = (props) => {
   const login = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target),
-      formDataObj = Object.fromEntries(formData.entries());
+    formDataObj = Object.fromEntries(formData.entries());
     const response = await logInUser(formDataObj);
     console.log(response);
     if (response != null) {
