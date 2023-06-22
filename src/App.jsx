@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 import Home from './Pages/Home';
@@ -14,12 +14,12 @@ import './css/style.css';
 
 const App = () => {
 
-  const userRole = localStorage.getItem("rol")
+  const [userRole, setUserRole] = useState(localStorage.getItem("rol"))
 
   return (
     <Routes> 
       <Route path="/" element={<Layout />} >
-      <Route index element={<Home />} />
+      <Route index element={<Home setUserRole={setUserRole} />} />
       <Route path="404" element={<NoMatch />} />
       <Route exact path='/unauthorized'  element={<Unauthorized />} />
 

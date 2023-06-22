@@ -14,6 +14,7 @@ const LoginModal = (props) => {
     if(response!=null){
       localStorage.setItem('jwt', response.token);
       localStorage.setItem('rol', response.rol);
+      props.setUserRole(localStorage.getItem("rol"))
       //window.location.replace("/MiHome")
       if(response.rol === "ROLE_ALUMNO"){
         navigate("/Materias");
@@ -25,7 +26,8 @@ const LoginModal = (props) => {
       
     //TODO: ESTE ELSE ES SOLO PARA PROBAR SIN EL BACKEND
     } else {
-      localStorage.setItem('rol', "ROLE_PROFESOR");
+      localStorage.setItem('rol', "ROLE_ALUMNO");
+      props.setUserRole(localStorage.getItem("rol"))
 
       if(localStorage.getItem("rol") === "ROLE_ALUMNO"){
         navigate("/Materias");
@@ -35,6 +37,7 @@ const LoginModal = (props) => {
         navigate("/Profesores");
       }
     }
+    
   };
 
   const closeLogIn = () => {
