@@ -11,7 +11,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-document.body.style.backgroundColor = "wheat"
+const bg = require("./images/fondo.png");
+document.body.style.backgroundImage = `url(${bg})`;
+document.body.style.backgroundBlendMode = "luminosity"
 root.render(
   <React.StrictMode>
     <BrowserRouter>
