@@ -9,7 +9,7 @@ const LoginModal = (props) => {
     event.preventDefault();
     const formData = new FormData(event.target),
     formDataObj = Object.fromEntries(formData.entries());
-    const response = await logInUser(formDataObj)
+    const response = await logInUser(formDataObj);
     console.log(response);
     if(response!=null){
       localStorage.setItem('jwt', response.token);
