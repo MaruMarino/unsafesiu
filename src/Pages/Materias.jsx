@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getMaterias, obtenerCalificacionesPorAlumno } from "../api/materias";
-import { Button, Col, Container, NavDropdown, Row } from "react-bootstrap";
+import { getMaterias } from "../api/materias";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import MateriasAlumnoModal from "../components/MateriasAlumnoModal";
 
 const Materias = () => {

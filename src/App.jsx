@@ -31,9 +31,7 @@ const App = () => {
         <Route exact path='/Cursos' element={<Cursos/>}/>
       </Route>
 
-      <Route exact path='/Profesores' element={<ProtectedRoute authorized={userRole === "ROLE_RECTOR"}/>}>
-        <Route exact path='/Profesores' element={<Profesores/>}/>
-      </Route>
+      <Route exact path='/Profesores' element={<Profesores/>}/>
 
 
       
