@@ -32,7 +32,7 @@ const NotasModal = (props) => {
 
     let calificacionActualizada = {
       ...calificacion, 
-      calificacion: parseInt(formDataObj.calificacion)
+      calificacion: parseFloat(formDataObj.calificacion)
     }
 
     const modificadoCorrectamente = await modificarCalificacion(calificacionActualizada);

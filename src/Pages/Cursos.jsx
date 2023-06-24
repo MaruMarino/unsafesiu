@@ -31,7 +31,6 @@ const Cursos = () => {
   
   return (
   <>
-    
     <div>
       <Header />
         <Container style={{backgroundColor: "papayawhip", fontFamily:'Helvetica'}}>
@@ -42,21 +41,13 @@ const Cursos = () => {
             </Row>
             <Container className="px-5">
             {cursos.map((curso) => (
-                <Col xs={12} lg={6} xl={4} className="py-1">
-                  <Row>
-                    <Button variant="warning" className="text-start" onClick={() => abrirNotasMateria(curso)}>
-                      {curso.nombre}
-                    </Button>
-                  </Row>
-                </Col>
-            //<Link to="/materias" style={{textDecoration: 'none', color: "black"}}>
-              /*<Row key={curso.id} id="_1" className="my-2 border border-3 border-dark rounded" onClick={() => abrirNotasMateria(curso)}>
-                <Col md="auto">
-                  <h4 className="mt-2">{curso.nombre}</h4>
-                </Col>
-              </Row>*/
-
-            //</Link>
+              <Col xs={12} lg={6} xl={4} className="py-1">
+                <Row>
+                  <Button variant="warning" className="text-start" onClick={() => abrirNotasMateria(curso)}>
+                    {curso.nombre}
+                  </Button>
+                </Row>
+              </Col>
             ))}
             </Container>
             <Row>
